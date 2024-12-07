@@ -31,7 +31,7 @@ chmod +x analyze_logs.sh
 
 ## Результат
 В результате выполнения всех шагов в разделе *Использование* на экран выведется следующее:
-![screenshot](imageFolder/screenshot.png)
+![screenshot](result.jpg)
 
 ## Meta
 
