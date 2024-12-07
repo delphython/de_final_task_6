@@ -18,3 +18,6 @@ awk '(NR > 1) {vals[$1]} END {print "Количество уникальных I
 # Подсчитать количество запросов по методам
 echo "Количество запросов по методам:"
 awk -F '"' 'NF>2 {print $2}' $1 | awk '{ a[$1]++ }END{ for(i in a) printf "   %s\t%s\n",a[i], i }'
+
+# Найти самый популярный URL
+awk -F '"' 'NF>2 {print $2}' access.log | awk '{ a[$2]++ }END{ for(i in a) printf "%s %s\n",a[i], i }' | awk 'BEGIN {max = 0} {if ($1>max) max=$1} END {printf "самый популярный URL:\t%s %s\n", max, $2}'
